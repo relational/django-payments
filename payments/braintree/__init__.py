@@ -10,11 +10,12 @@ from ..core import BasicProvider
 
 class BraintreeProvider(BasicProvider):
 
-    def __init__(self, merchant_id, public_key, private_key, sandbox=True,
+    def __init__(self, merchant_id, public_key, private_key, merchant_account_id, sandbox=True,
                  **kwargs):
         self.merchant_id = merchant_id
         self.public_key = public_key
         self.private_key = private_key
+        self.merchant_account_id = merchant_account_id
 
         environment = braintree.Environment.Sandbox
         if not sandbox:
